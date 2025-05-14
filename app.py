@@ -2,7 +2,7 @@
 import streamlit as st
 import numpy as np
 import joblib
-import tensorflow as tf
+from tensorflow.keras.models import load_model
 from PIL import Image
 import base64
 import os
@@ -22,7 +22,7 @@ download_from_drive(MODEL_DRIVE_ID, "diabetes_model.keras")
 download_from_drive(SCALER_DRIVE_ID, "scaler.save")
 
 # ---- LOAD FILES ----
-model = tf.keras.models.load_model("diabetes_model.keras")
+model = load_model("diabetes_model.keras")
 scaler = joblib.load("scaler.save")
 
 # Set background image using base64
