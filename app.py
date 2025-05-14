@@ -22,7 +22,7 @@ download_from_drive(MODEL_DRIVE_ID, "diabetes_model.keras")
 download_from_drive(SCALER_DRIVE_ID, "scaler.save")
 
 # ---- LOAD FILES ----
-model = load_model("diabetes_model.keras")
+model = tf.keras.models.load_model("diabetes_model.keras")
 scaler = joblib.load("scaler.save")
 
 # Set background image using base64
